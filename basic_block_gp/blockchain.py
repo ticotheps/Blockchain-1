@@ -12,7 +12,7 @@ class Blockchain(object):
         self.current_transactions = []
 
         # Create the genesis block
-        self.new_block(previous_hash=1, proof=100)
+        self.new_block(previous_hash=self.hash(1), proof=100)
 
     def new_block(self, proof, previous_hash=None):
         """
@@ -45,7 +45,7 @@ class Blockchain(object):
         # Return the new block
         return block
 
-    def hash(block):
+    def hash(self, block):
         """
         Creates a SHA-256 hash of a Block
 
